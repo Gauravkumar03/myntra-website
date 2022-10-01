@@ -11,6 +11,9 @@
 ### Form validation is available.
 ### All products page is responsive only.
 ### All features is available like sorting, filteration etc.
+
+### TechStack :- HTML , CSS , JAVASCRIPT .
+
 ### Netlify link :- https://e-myntra-clone.netlify.app/
 
 ## This is landing page of our website
