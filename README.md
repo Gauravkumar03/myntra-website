@@ -1,8 +1,21 @@
-# Myntra-Website-Clone
+<h1 align="center">Myntra-Website-Clone</h1> 
+<br />
+<p align="center">
+    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="css3"/>   
+    <img src="https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white" />
+    <img src="https://img.shields.io/badge/html-%2320232a.svg?style=for-the-badge&logo=HTML&logoColor=%2361DAFB" />
+</p>
 
-### What is Myntra ?
-#### Myntra is a major Indian fashion e-commerce company headquartered in Bengaluru, Karnataka, India. The company was founded in 2007 to sell personalized gift items.
+<h3 align="center"><a href="https://e-myntra-clone.netlify.app/"><strong>Want to see live preview »</strong></a></h3>
 
+<p align="center"> 
+    <br />&#10023;
+    <a href="#Getting-Started">Getting Started</a> &#10023; <a href="#Setup">Setup</a> &#10023;    
+    <a href="#Contributors">Contributors</a> &#10023;
+  </p>
+
+    Myntra is a major Indian fashion e-commerce company headquartered in Bengaluru, Karnataka, India. The company was founded in 2007 to sell personalized gift items.
+<br />
 
 ### What is Myntra used for?
 #### Myntra provides a number of Internet-based services through the Platform. One such Service enables Users to purchase original merchandise such as clothing, footwear and accessories from various fashion and lifestyle brands (collectively, "Products").
