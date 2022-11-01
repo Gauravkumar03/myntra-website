@@ -27,7 +27,7 @@
 
 ### TechStack :- HTML , CSS , JAVASCRIPT .
 
-### Netlify link :- https://e-myntra-clone.netlify.app/
+### Netlify link :- https://ec-myntra-clone.netlify.app
 
 ## This is landing page of our website
 
