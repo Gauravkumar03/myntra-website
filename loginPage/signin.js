@@ -1,35 +1,40 @@
 var form = document.querySelector("#form") 
 
 var userData = JSON.parse(localStorage.getItem("signupData"))
-
+var flag = false;
+document.getElementById("Profile_login").addEventListener("click", myFunction);
+var profilename='Profile';
 form.addEventListener("submit",function(event){
     event.preventDefault()
-// console.log("---------------")
     var loginObj={
         userId: form.tel.value,
         userPaswd: form.pswd.value
         }
+        userData.forEach(element => {
+        if(loginObj.userId== "" || loginObj.userPaswd =="" ){
+            alert("Please enter All details")
+            return
+        }
+        else if((element.userEmail== loginObj.userId || element.userMob == loginObj.userId) && (element.userPassword==loginObj.userPaswd) )
+        {
+            alert("Signin Successful")
+            
+            profilename = element.userName;
+            flag = true;
+            window.location.href="../index.html"
+            return
+        }
+        else{
+            alert("Invalid userid or password");
+            return
+        }
+    });
 
-    // console.log(userData)
-    // console.log(loginObj)
-    if(loginObj.userId == "" || loginObj.userPaswd =="" ){
-        alert("Please Enter Details")
-        window.location.href="signin.html"
-    }
-    // else if((userData.userMob != loginObj.userId || userData.userEmail != loginObj.userId) || (userData.userPassword!=loginObj.userPaswd) ){
-    //     alert("Invalid user id or password")
-    //     window.location.href="signin.html"
-    // }
-    // console.log(loginObj.userId)
-    else if((userData.userMob == loginObj.userId || userData.userEmail == loginObj.userId) && (userData.userPassword==loginObj.userPaswd) )
-    {
-        // console.log(loginArr)
-        alert("Signin successful")
-        window.location.href="../index.html"
-    }
-    else{
-        alert("Signin Successful");
-        window.location.href="../index.html"
-
-    }
 })
+
+function myFunction(){
+    if(flag==true){
+        var name = document.getElementsByClassName("Profile_title").value
+        name = profilename 
+    }
+}

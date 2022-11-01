@@ -76,13 +76,12 @@
             <h1>Signup</h1>
             <input id="SignupName" type="text" placeholder="Enter full name">
             <input id="SignupMob" type="tel" placeholder="Enter mobile number" minlength="10" maxlength="10">
-            <input id="SignupEmail" type="text" placeholder="Enter email Id">  
-            <input id="SignupDOB" type="date" placeholder="Enter date of birth">
+            <input id="SignupEmail" type="text" placeholder="Enter email Id">
             <input id="SignupPassword" type="password" placeholder="Enter password" minlength="6">
             <input id="submit" type="submit" value="CONTINUE">
             <p id="signupnm"></p>
             <p>Have Account?
-                <span><a href="signin.html" class="c1"> Login here</a></span>
+                <span><a href="./signin.html" class="c1"> Login here</a></span>
             </p>
         </div>        
     </form>
@@ -178,65 +177,38 @@
     var form = document.querySelector("#form")
 
     var signupArr= JSON.parse(localStorage.getItem("signupData")) || []
-
+    
     form.addEventListener("submit",function(event){
         event.preventDefault()
         var signupObj={
             userName: form.SignupName.value,
             userMob: form.SignupMob.value,
             userEmail: form.SignupEmail.value,
-            userDOB: form.SignupDOB.value,
             userPassword: form.SignupPassword.value,
         }
-        signupArr.push(signupObj)
-
-        if(signupObj.userName !="" && signupObj.userMob !="" && signupObj.userEmail !="" && signupObj.userDOB !="" && signupObj.userPassword !="")
-        {
-            if(signupObj.userName == signupArr.userName && (signupObj.userMob == signupArr.userMob || signupObj.userEmail == signupArr.userEmail))
-           {
-                alert("Already an account")
-                return 
-           }
-           else{
-                alert("Signup successful")
-                window.location.href="signin.html"
-                localStorage.setItem("signupData",JSON.stringify(signupArr))
-           }
-            
-        }
-        else{
-            // if(signupObj.userName ="")
-            // {
-            //     var  p = document.createElement("p")
-            //     p.innerText = "Enter your name"
-            //     document.querySelector("#form").append(p);
-            // }
-            
-            // else if(signupObj.userMob ="")
-            // {
-            //     var  p = document.createElement("p")
-            //     p.innerText = "Enter your mobile number"
-            // }
-            // else if(signupObj.userEmail ="")
-            // {
-            //     var  p = document.createElement("p")
-            //     p.innerText = "Enter your email id"
-            // }
-            // else if(signupObj.userDOB ="")
-            // {
-            //     var  p = document.createElement("p")
-            //     p.innerText = "Enter date of birth"
-            // }
-            // var  p = document.createElement("p")
-                var p = "Please enter all details"
-                // p.style.fontSize = "10px"
-                // p.style.color="red"
-                alert(p)
-                return
-                
-                // document.querySelector("#signupnm").append(p);
-                console.log(signupObj.userEmail)
-        }
         
+        
+        if(signupObj.userName !="" && signupObj.userMob !="" && signupObj.userEmail !="" && signupObj.userPassword !="")
+        {
+            var flag = false
+            signupArr.forEach(element => {
+                if(signupObj.userMob==element.userMob && signupObj.userEmail==element.userEmail){
+                    flag = true
+                }
+            });
+
+            if(flag==false){
+                signupArr.push(signupObj)  
+                localStorage.setItem("signupData",JSON.stringify(signupArr))
+                alert("Signup successful.....!")
+                window.location.href="signin.html"
+            }else if(flag == true){
+                alert("Aready have an account")
+                window.location.href="./signin.html"
+            } 
+        }
+         else{
+            alert("Please enter all details")
+        }
     })
 </script>
